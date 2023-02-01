@@ -4,6 +4,8 @@ import "./index.css";
 import App from "./App";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./theme";
+import { BrowserRouter as Router } from 'react-router-dom';
+import CssBaseline from '@mui/material/CssBaseline';
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -11,7 +13,10 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <App />
+      <CssBaseline />
+      <Router>
+        <App />
+      </Router>
     </ThemeProvider>
   </React.StrictMode>
 );

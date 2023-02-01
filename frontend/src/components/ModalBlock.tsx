@@ -1,10 +1,10 @@
-import * as React from "react";
+import React from 'react';
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
-import { useStylesSignIn } from "../../pages/SignIn";
+import { useStylesSignIn } from "../pages/SignIn";
 
 interface ModalBlockProps {
   title: string;

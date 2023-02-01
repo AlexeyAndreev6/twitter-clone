@@ -11,7 +11,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
 import MessageIcon from "@mui/icons-material/ModeCommentOutlined";
 
-import { ModalBlock } from "../components/Dialog";
+import { ModalBlock } from "../components/ModalBlock";
 
 export const useStylesSignIn = makeStyles()((theme) => {
   return {
@@ -33,8 +33,8 @@ export const useStylesSignIn = makeStyles()((theme) => {
       left: "50%",
       top: "53%",
       transform: "translate(-50%,-50%)",
-      height: "350%",
-      width: "350%",
+      height: "300%",
+      width: "300%",
     },
     blueSideListInfo: {
       position: "relative",
@@ -88,7 +88,8 @@ export const useStylesSignIn = makeStyles()((theme) => {
   };
 });
 
-function SignIn() {
+export const SignIn: React.FC = (): React.ReactElement => {
+  const { classes } = useStylesSignIn();
   const [visibleModal, setVisibleModal] = React.useState<"signIn" | "signUp">();
 
   const handleClickOpenSignIn = (): void => {
@@ -101,7 +102,6 @@ function SignIn() {
     setVisibleModal(undefined);
   };
 
-  const { classes } = useStylesSignIn();
   return (
     <div className={classes.wrapper}>
       <section className={classes.blueSide}>
@@ -253,4 +253,3 @@ function SignIn() {
   );
 }
 
-export default SignIn;
