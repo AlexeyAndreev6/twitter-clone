@@ -1,0 +1,54 @@
+{
+  "tweets": [
+    {
+      "id": 1,
+      "_id": "999",
+      "text": "test tweet.",
+      "user": {
+        "fullname": "Test user",
+        "username": "test",
+        "avatarUrl": "https://source.unsplash.com/random/100x100?5"
+      }
+    }
+  ],
+  "tags": [
+    {
+      "_id": "63dba36b341eb643cae0d7a83",
+      "name": "#JavaScript",
+      "count": 2555333
+    },
+    {
+      "_id": "63dba363b31eb643cae0d7a83",
+      "name": "#TypeScript",
+      "count": 1513213
+    },
+    {
+      "_id": "63dba36b31eb6423cae0d7a83",
+      "name": "#React",
+      "count": 1913547
+    }
+  ],
+  "users": [
+    {
+      "fullname": "Bobbie Kelly",
+      "username": "garner",
+      "avatarUrl": "https://source.unsplash.com/random/100x100?4"
+    },
+    {
+      "fullname": "Robyn Aguilar",
+      "username": "sally",
+      "avatarUrl": "https://source.unsplash.com/random/100x100?1"
+    },
+    {
+      "fullname": "Holly Leonard",
+      "username": "byers",
+      "avatarUrl": "https://source.unsplash.com/random/100x100?5"
+    }
+  ],
+  "user": {
+    "_id": "63dba36b31eb643cae0d7a83",
+    "fullname": "Alexey Andreev",
+    "username": "AlexeyAndreev311",
+    "avatarUrl": "https://source.unsplash.com/random/100x100?4"
+  }
+}

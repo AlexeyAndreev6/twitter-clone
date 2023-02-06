@@ -162,7 +162,11 @@ export const SignIn: React.FC = (): React.ReactElement => {
             onClose={handleCloseModal}
             title="Войти в аккаунт"
           >
-            <FormControl className={classes.loginFormControl} component="fieldset" fullWidth>
+            <FormControl
+              className={classes.loginFormControl}
+              component="fieldset"
+              fullWidth
+            >
               <FormGroup aria-label="position" row>
                 <TextField
                   className={classes.loginSideField}
@@ -251,5 +255,4 @@ export const SignIn: React.FC = (): React.ReactElement => {
       </section>
     </div>
   );
-}
-
+};
