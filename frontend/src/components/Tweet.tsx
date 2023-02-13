@@ -46,7 +46,7 @@ const Tweet: React.FC<TweetProps> = ({
             <span className={classes.tweetsUserName}>·</span>&nbsp;
             <span className={classes.tweetsUserName}>1 ч</span>
           </Typography>
-          <Typography variant="body1">{text}</Typography>
+          <Typography variant="body1" gutterBottom>{text}</Typography>
           <div className={classes.tweetFooter}>
             <div>
               <IconButton>

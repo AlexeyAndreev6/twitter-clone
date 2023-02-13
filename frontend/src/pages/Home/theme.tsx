@@ -70,20 +70,26 @@ export const useHomeStyles = makeStyles()((theme: Theme) => ({
   tweetsHeader: {
     display: "flex",
     alignItems: "center",
+    flex: 1,
     borderTop: 0,
     borderLeft: 0,
     borderRight: 0,
     borderRadius: 0,
+    padding: "10px 15px",
     "& h6": {
       fontWeight: 800,
     },
+  },
+  tweetsHeaderUser: {
+    display: "flex",
+    alignItems: "center",
   },
   tweetsHeaderBackButton: {
     marginRight: 15,
   },
   tweet: {
     display: "flex",
-    alignItems:"flex-start",
+    alignItems: "flex-start",
     cursor: "pointer",
     paddingTop: 15,
     paddingLeft: 20,
@@ -109,6 +115,15 @@ export const useHomeStyles = makeStyles()((theme: Theme) => ({
     justifyContent: "space-between",
     width: "90%",
     maxWidth: 450,
+  },
+  fullTweet: {
+    padding: 22,
+  },
+  fullTweetText: {
+    fontSize: 24,
+    marginTop: 20,
+    lineHeight: 1.3,
+    wordBreak:'break-word'
   },
   rightSide: {
     paddingTop: 20,

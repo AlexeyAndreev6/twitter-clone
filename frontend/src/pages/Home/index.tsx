@@ -31,7 +31,6 @@ import {
 import Tags from "../../components/Tags";
 import { Route } from "react-router-dom";
 import BackButton from "../../components/BackButton";
-import { fetchTweetData } from "../../store/ducks/tweet/actionCreators";
 import { fetchTags } from "../../store/ducks/tags/actionCreators";
 import { FullTweet } from "./components/FullTweet";
 

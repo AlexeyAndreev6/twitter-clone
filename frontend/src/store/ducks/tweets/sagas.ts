@@ -1,16 +1,17 @@
 // @ts-nocheck
-
+import { call, put, takeLatest } from "redux-saga/effects";
 import { TweetsApi } from "./../../../services/api/tweetsApi";
+import { AddFormState, LoadingState } from "./contracts/state";
 import {
+  addTweet,
+  setAddFormState,
   setTweets,
   setTweetsLoadingState,
-  TweetsActionsType,
-  addTweet,
-  FetchAddTweetActionInterface,
 } from "./actionCreators";
-import { call, put, takeLatest } from "redux-saga/effects";
-import axios from "axios";
-import { LoadingState } from "./contracts/state";
+import {
+  FetchAddTweetActionInterface,
+  TweetsActionsType,
+} from "./contracts/actionTypes";
 
 export function* fetchTweetsRequest() {
   try {
@@ -36,7 +37,7 @@ export function* fetchAddTweetRequest({
     const item = yield call(TweetsApi.addTweet, data);
     yield put(addTweet(item));
   } catch (error) {
-    yield put(setTweetsLoadingState(LoadingState.ERROR));
+    yield put(setAddFormState(AddFormState.ERROR));
   }
 }
 

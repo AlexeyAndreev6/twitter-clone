@@ -8,10 +8,14 @@ import {
 } from "@mui/material";
 import ImageOutlinedIcon from "@mui/icons-material/ImageOutlined";
 import EmojiIcon from "@mui/icons-material/SentimentSatisfiedOutlined";
+import Alert from "@mui/material/Alert";
 
 import { useHomeStyles } from "../pages/Home/theme";
 import { useDispatch } from "react-redux";
 import { fetchAddTweet } from "../store/ducks/tweets/actionCreators";
+import { useSelector } from "react-redux";
+import { selectAddFormState } from "../store/ducks/tweets/selectors";
+import { AddFormState } from "../store/ducks/tweets/contracts/state";
 
 interface AddTweetFormProps {
   maxRows?: number;
@@ -25,6 +29,7 @@ export const AddTweetForm: React.FC<AddTweetFormProps> = ({
   const { classes } = useHomeStyles();
   const dispatch = useDispatch();
 
+  const addFormState = useSelector(selectAddFormState);
   const [text, setText] = useState<string>("");
   const textLimitPercent = (text.length / 280) * 100;
   const textCount = MAX_LENGTH - text.length;
@@ -37,9 +42,7 @@ export const AddTweetForm: React.FC<AddTweetFormProps> = ({
     }
   };
 
-  const handleClickAddTweet = (
-    e: React.FormEvent<HTMLButtonElement>
-  ): void => {
+  const handleClickAddTweet = (e: React.FormEvent<HTMLButtonElement>): void => {
     dispatch(fetchAddTweet(text));
     setText("");
     e.preventDefault();
@@ -93,15 +96,22 @@ export const AddTweetForm: React.FC<AddTweetFormProps> = ({
             </>
           )}
           <Button
-            disabled={textLimitPercent > 100}
+            disabled={!text || textLimitPercent > 100}
             color="primary"
             variant="contained"
             onClick={handleClickAddTweet}
           >
-            Твитнуть
+            {addFormState === AddFormState.LOADING ? (
+              <CircularProgress color="primary" size={16}/>
+            ) : (
+              "Твитнуть"
+            )}
           </Button>
         </div>
       </div>
+      {addFormState === AddFormState.ERROR && (
+        <Alert severity="error">Возникла ошибка при добавлении твита :(</Alert>
+      )}
     </div>
   );
 };
