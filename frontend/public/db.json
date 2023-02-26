@@ -9,16 +9,6 @@
         "avatarUrl": "https://source.unsplash.com/random/100x100?5"
       },
       "id": 1
-    },
-    {
-      "_id": "ob5p6mfti5",
-      "text": "das",
-      "user": {
-        "fullname": "Test user",
-        "username": "test",
-        "avatarUrl": "https://source.unsplash.com/random/100x100?5"
-      },
-      "id": 2
     }
   ],
   "tags": [
